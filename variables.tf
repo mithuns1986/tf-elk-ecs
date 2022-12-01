@@ -20,6 +20,11 @@ variable "app_image" {
   default     = "nginx:latest"
 }
 
+variable "app_image2" {
+  description = "Docker image to run in the ECS cluster"
+  default     = "httpd:latest"
+}
+
 variable "app_port" {
   description = "Port exposed by the docker image to redirect traffic to"
   default     = 80
@@ -42,4 +47,9 @@ variable "fargate_cpu" {
 variable "fargate_memory" {
   description = "Fargate instance memory to provision (in MiB)"
   default     = "2048"
+}
+
+variable "env" {
+  description = "ECS Cluster environment"
+  default     = "dev"
 }
