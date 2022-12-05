@@ -11,6 +11,6 @@ provider "aws" {
 terraform {
 
   backend "s3" {
-    region = var.aws_region
+    region = ap-southeast-1
   }
 }
