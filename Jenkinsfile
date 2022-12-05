@@ -10,7 +10,7 @@ pipeline {
     stage('TF Plan') {
        steps {
          //withAWS(roleAccount:'818682305270', role:'jenkins-cross-account-role-ss-sgtradex') {
-           withAWS(credentials: "${params.Environment}-Pitstop-AWS-Key", region: 'ap-southeast-1'){
+           withAWS(credentials: "${params.Environment}-cdi-aws", region: 'ap-southeast-1'){
          script {
            sh 'rm -rf .terraform'
            //sh 'terraform state replace-provider registry.terraform.io/-/aws hashicorp/aws'
