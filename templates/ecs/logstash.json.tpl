@@ -1,7 +1,7 @@
 [
   {
     "name": "elk",
-    "image": "${app_image}",
+    "image": "${app_image_logstash}",
     "cpu": ${fargate_cpu},
     "memory": ${fargate_memory},
     "networkMode": "awsvpc",

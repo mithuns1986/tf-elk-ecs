@@ -1,7 +1,7 @@
 [
   {
     "name": "elk",
-    "image": "${app_image2}",
+    "image": "${app_image_elasticsearch}",
     "cpu": ${fargate_cpu},
     "memory": ${fargate_memory},
     "networkMode": "awsvpc",

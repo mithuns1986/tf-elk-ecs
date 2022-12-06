@@ -15,14 +15,19 @@ variable "az_count" {
   default     = "2"
 }
 
-variable "app_image" {
-  description = "Docker image to run in the ECS cluster"
-  default     = "nginx:latest"
+variable "app_image_logstash" {
+  description = "Logstash image to run in the ECS cluster"
+  default     = "818682305270.dkr.ecr.ap-southeast-1.amazonaws.com/dev-elk:logstash"
 }
 
-variable "app_image2" {
-  description = "Docker image to run in the ECS cluster"
-  default     = "httpd:latest"
+variable "app_image_elasticsearch" {
+  description = "Elasticsearch image to run in the ECS cluster"
+  default     = "818682305270.dkr.ecr.ap-southeast-1.amazonaws.com/dev-elk:elasticsearch"
+}
+
+variable "app_image_kibana" {
+  description = "Kibana image to run in the ECS cluster"
+  default     = "818682305270.dkr.ecr.ap-southeast-1.amazonaws.com/dev-elk:kibana"
 }
 
 variable "app_port" {
