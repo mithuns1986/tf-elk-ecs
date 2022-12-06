@@ -51,7 +51,7 @@ resource "aws_ecs_task_definition" "logstash" {
 }
 
 resource "aws_ecs_task_definition" "elasticsearch" {
-  family                   = "${lower(var.env)}-elasticsearch"
+  family                   = "elasticsearch"
   execution_role_arn       = aws_iam_role.ecs_task_execution_role.arn
   network_mode             = "awsvpc"
   requires_compatibilities = ["FARGATE"]
@@ -61,7 +61,7 @@ resource "aws_ecs_task_definition" "elasticsearch" {
 }
 
 resource "aws_ecs_task_definition" "kibana" {
-  family                   = "${lower(var.env)}-kibana"
+  family                   = "kibana"
   execution_role_arn       = aws_iam_role.ecs_task_execution_role.arn
   network_mode             = "awsvpc"
   requires_compatibilities = ["FARGATE"]
@@ -71,7 +71,7 @@ resource "aws_ecs_task_definition" "kibana" {
 }
 
 resource "aws_ecs_service" "logstash" {
-  name            = "${lower(var.env)}-elk"
+  name            = "logstash"
   cluster         = aws_ecs_cluster.main.id
   task_definition = aws_ecs_task_definition.logstash.arn
   desired_count   = var.app_count
