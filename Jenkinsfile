@@ -33,7 +33,7 @@ pipeline {
     }
      stage('TF Apply') {
       steps {
-                  withAWS(credentials: "${params.Environment}-Pitstop-AWS-Key", region: 'ap-southeast-1'){
+                  withAWS(credentials: "${params.Environment}-cdi-aws", region: 'ap-southeast-1'){
         script {
           sh "terraform apply -no-color -input=false '${workspace}/plan'"
         }
