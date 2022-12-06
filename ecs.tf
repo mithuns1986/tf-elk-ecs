@@ -92,7 +92,7 @@ resource "aws_ecs_service" "logstash" {
 }
 
 resource "aws_ecs_service" "elasticsearch" {
-  name            = "${lower(var.env)}-elk"
+  name            = "elasticsearch"
   cluster         = aws_ecs_cluster.main.id
   task_definition = aws_ecs_task_definition.elasticsearch.arn
   desired_count   = var.app_count
@@ -114,7 +114,7 @@ resource "aws_ecs_service" "elasticsearch" {
 }
 
 resource "aws_ecs_service" "kibana" {
-  name            = "${lower(var.env)}-elk"
+  name            = "kibana"
   cluster         = aws_ecs_cluster.main.id
   task_definition = aws_ecs_task_definition.kibana.arn
   desired_count   = var.app_count
