@@ -8,7 +8,7 @@ data "template_file" "logstash" {
   template = file("./templates/ecs/logstash.json.tpl")
 
   vars = {
-    app_image      = var.app_image_logstash
+    app_image_logstash      = var.app_image_logstash
     app_port       = var.app_port
     fargate_cpu    = var.fargate_cpu
     fargate_memory = var.fargate_memory
@@ -20,7 +20,7 @@ data "template_file" "elasticsearch" {
   template = file("./templates/ecs/elasticsearch.json.tpl")
 
   vars = {
-    app_image2      = var.app_image_elasticsearch
+    app_image_elasticsearch      = var.app_image_elasticsearch
     app_port       = var.app_port
     fargate_cpu    = var.fargate_cpu
     fargate_memory = var.fargate_memory
@@ -32,7 +32,7 @@ data "template_file" "kibana" {
   template = file("./templates/ecs/kibana.json.tpl")
 
   vars = {
-    app_image2      = var.app_image_kibana
+    app_image_kibana      = var.app_image_kibana
     app_port       = var.app_port
     fargate_cpu    = var.fargate_cpu
     fargate_memory = var.fargate_memory
