@@ -105,7 +105,7 @@ resource "aws_ecs_service" "elasticsearch" {
   name            = "elasticsearch"
   cluster         = aws_ecs_cluster.main.id
   task_definition = aws_ecs_task_definition.elasticsearch.arn
-  desired_count   = var.app_count
+  desired_count   = var.app_port_es1
   launch_type     = "FARGATE"
 
   network_configuration {
