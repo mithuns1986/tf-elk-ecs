@@ -21,7 +21,7 @@
         "hostPort": ${app_port_es2}
       }
     ],
-    "EnvironmentVariables": [
+    "EnvironmentVariables": 
       {
         "DISCOVERY_TYPE":	"single-node",
          "discovery.type":	"single-node",
@@ -29,13 +29,13 @@
          "ELASTICSEARCH_SKIP_TRANSPORT_TLS":	"true",
           "ES_JAVA_OPTS":	    "-Xms512m -Xmx512m"
       },
-      "MountPoints": [
+
+      "MountPoints": 
         {
           "ContainerPath": "/usr/share/elasticsearch/data",
           "SourceVolume": "ELK-efs"
         }
-
-      ]
-    ]
+      
+    
   }
 ]
