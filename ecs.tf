@@ -105,7 +105,7 @@ resource "aws_ecs_service" "elasticsearch" {
   name            = "elasticsearch"
   cluster         = aws_ecs_cluster.main.id
   task_definition = aws_ecs_task_definition.elasticsearch.arn
-  desired_count   = var.app_port_es1
+  desired_count   = var.app_count
   launch_type     = "FARGATE"
 
   network_configuration {
@@ -117,7 +117,7 @@ resource "aws_ecs_service" "elasticsearch" {
   load_balancer {
     target_group_arn = aws_alb_target_group.app.id
     container_name   = "elk"
-    container_port   = var.app_port
+    container_port   = var.app_port_es1
   }
 
   depends_on = [aws_alb_listener.front_end, aws_iam_role_policy_attachment.ecs_task_execution_role]
