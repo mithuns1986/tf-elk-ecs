@@ -21,8 +21,8 @@ data "template_file" "elasticsearch" {
 
   vars = {
     app_image_elasticsearch      = var.app_image_elasticsearch
-    app_port       = var.app_port_es1
-    fargate_cpu    = var.fargate_cpu
+    app_port_es1       = var.app_port_es1
+    app_port_es2       = var.app_port_es2
     fargate_memory = var.fargate_memory
     aws_region     = var.aws_region
   }
