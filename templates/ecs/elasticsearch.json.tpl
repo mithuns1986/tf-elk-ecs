@@ -23,6 +23,7 @@
     ],
         "environment": [ 
       {
+        "name": "VARNAME",
         "DISCOVERY_TYPE":	"single-node",
          "discovery.type":	"single-node",
          "ELASTIC_PASSWORD":	"SGTelk123!",
