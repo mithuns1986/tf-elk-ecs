@@ -28,7 +28,8 @@
          "ELASTIC_PASSWORD":	"SGTelk123!",
          "ELASTICSEARCH_SKIP_TRANSPORT_TLS":	"true",
           "ES_JAVA_OPTS":	    "-Xms512m -Xmx512m"
-      }],
+      }]
+      ,
 
       "MountPoints": [
         {
@@ -36,7 +37,7 @@
           "SourceVolume": "ELK-efs"
         }
       
-      ],
+      ]/*,
       "volumes": [
         {
           "host": {
@@ -44,6 +45,6 @@
           },
           "name": "ELK-efs"
         }
-      ]
+      ]*/
   }   
 ]

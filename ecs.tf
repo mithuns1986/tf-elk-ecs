@@ -59,6 +59,15 @@ resource "aws_ecs_task_definition" "elasticsearch" {
   cpu                      = var.fargate_cpu
   memory                   = var.fargate_memory
   container_definitions    = data.template_file.elasticsearch.rendered
+  volume {
+    name = "ELK-efs"
+
+    efs_volume_configuration {
+      file_system_id          = "fs-0665fc29086582a75"
+      root_directory          = "/"
+      transit_encryption      = "ENABLED"
+    }
+  }
 }
 
 resource "aws_ecs_task_definition" "kibana" {
