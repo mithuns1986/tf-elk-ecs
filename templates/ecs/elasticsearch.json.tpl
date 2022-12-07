@@ -37,14 +37,7 @@
           "SourceVolume": "ELK-efs"
         }
       
-      ]/*,
-      "volumes": [
-        {
-          "host": {
-            "sourcePath": "/efs/ELK-efs"
-          },
-          "name": "ELK-efs"
-        }
-      ]*/
+      ]
+
   }   
 ]
