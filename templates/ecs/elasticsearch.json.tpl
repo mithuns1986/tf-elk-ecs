@@ -1,6 +1,6 @@
 [
   {
-    "name": "elk",
+    "name": "elasticsearch",
     "image": "${app_image_elasticsearch}",
     "cpu": ${fargate_cpu},
     "memory": ${fargate_memory},
