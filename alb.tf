@@ -28,7 +28,7 @@ resource "aws_alb_target_group" "app" {
 resource "aws_alb_listener" "front_end" {
   load_balancer_arn = aws_alb.main.id
   port              = var.app_port_es1
-  protocol          = "TCP"
+  protocol          = "HTTP"
 
   default_action {
     target_group_arn = aws_alb_target_group.app.id
