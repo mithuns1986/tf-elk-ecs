@@ -117,7 +117,8 @@ resource "aws_ecs_service" "elasticsearch" {
   load_balancer {
     target_group_arn = aws_alb_target_group.app.id
     container_name   = "elasticsearch"
-    container_port   = var.app_port_es1
+    #container_port   = var.app_port_es1
+    container_port   = "9200"
   }
 
   depends_on = [aws_alb_listener.front_end, aws_iam_role_policy_attachment.ecs_task_execution_role]
