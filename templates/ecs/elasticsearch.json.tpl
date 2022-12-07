@@ -33,7 +33,7 @@
       "MountPoints": [
         {
           "ContainerPath": "/usr/share/elasticsearch/data",
-          "SourceVolume": "fs-0665fc29086582a75"
+          "SourceVolume": "ELK-efs"
         }
       
       ],
