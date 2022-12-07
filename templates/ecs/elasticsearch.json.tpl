@@ -20,22 +20,7 @@
         "containerPort": ${app_port_es2},
         "hostPort": ${app_port_es2}
       }
-    ],
-    "EnvironmentVariables": 
-      {
-        "DISCOVERY_TYPE":	"single-node",
-         "discovery.type":	"single-node",
-         "ELASTIC_PASSWORD":	"SGTelk123!",
-         "ELASTICSEARCH_SKIP_TRANSPORT_TLS":	"true",
-          "ES_JAVA_OPTS":	    "-Xms512m -Xmx512m"
-      },
-
-      "MountPoints": 
-        {
-          "ContainerPath": "/usr/share/elasticsearch/data",
-          "SourceVolume": "ELK-efs"
-        }
-      
+    ]
     
   }
 ]
