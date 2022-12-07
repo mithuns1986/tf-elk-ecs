@@ -36,6 +36,13 @@
           "SourceVolume": "fs-0665fc29086582a75"
         }
       
-      ]
+      ],
+      "volumes": [
+        {
+          "host": {
+            "sourcePath": "/efs/ELK-efs"
+          },
+          "name": "ELK-efs"
+        }
   }
 ]
