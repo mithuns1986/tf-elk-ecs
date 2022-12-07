@@ -116,7 +116,7 @@ resource "aws_ecs_service" "elasticsearch" {
 
   load_balancer {
     target_group_arn = aws_alb_target_group.app.id
-    container_name   = "elk"
+    container_name   = "elasticsearch"
     container_port   = var.app_port_es1
   }
 
