@@ -68,7 +68,7 @@ resource "aws_ecs_task_definition" "kibana" {
   requires_compatibilities = ["FARGATE"]
   cpu                      = var.fargate_cpu
   memory                   = var.fargate_memory
-  container_definitions    = data.template_file.elasticsearch.rendered
+  container_definitions    = data.template_file.kibana.rendered
 }
 
 resource "aws_ecs_service" "logstash" {
