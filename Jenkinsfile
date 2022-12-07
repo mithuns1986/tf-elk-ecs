@@ -15,9 +15,9 @@ pipeline {
            sh 'rm -rf .terraform'
            //sh 'terraform state replace-provider registry.terraform.io/-/aws hashicorp/aws'
            sh "terraform init -upgrade -reconfigure -get=true -input=false -no-color -backend-config='bucket=dev-elk-statefile' -backend-config='key=${params.Environment}-tf.tfstate'" 
-          //sh "terraform plan -input=false  -no-color -refresh=true -var='env=${params.Environment}' -refresh=true  -out='${workspace}/plan'"
+          sh "terraform plan -input=false  -no-color -refresh=true -var='env=${params.Environment}' -refresh=true  -out='${workspace}/plan'"
            //Enable below line to destroy nothing to add extra
-           sh "terraform plan -destroy -input=false  -no-color -refresh=true  -var='env=${params.Environment}' -out='${workspace}/plan'"
+           //sh "terraform plan -destroy -input=false  -no-color -refresh=true  -var='env=${params.Environment}' -out='${workspace}/plan'"
 
          }
          }

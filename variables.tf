@@ -35,9 +35,19 @@ variable "app_port" {
   default     = 80
 }
 
+variable "app_port_es1" {
+description = "Port mapping for elasticsearch"
+default = 9200
+}
+
+variable "app_port_es2" {
+description = "Port mapping for elasticsearch"
+default = 9300
+}
+
 variable "app_count" {
   description = "Number of docker containers to run"
-  default     = 3
+  default     = 1
 }
 
 variable "health_check_path" {
