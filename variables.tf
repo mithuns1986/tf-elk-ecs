@@ -47,7 +47,7 @@ default = 9300
 
 variable "app_count" {
   description = "Number of docker containers to run"
-  default     = 1
+  default     = "1"
 }
 
 variable "health_check_path" {
