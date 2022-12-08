@@ -62,9 +62,9 @@ resource "aws_ecs_task_definition" "elasticsearch" {
   container_definitions    = jsonencode([
     {
       name      = "elasticsearch"
-      image     = ${app_image_elasticsearch}
-      cpu       = ${fargate_cpu}
-      memory    = ${fargate_memory}
+      image     = var.app_image_elasticsearch
+      cpu       = var.fargate_cpu
+      memory    = var.fargate_memory
       network_mode = "awsvpc"
       essential = true
       logConfiguration = {
