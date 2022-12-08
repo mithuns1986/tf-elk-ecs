@@ -87,10 +87,11 @@ resource "aws_ecs_task_definition" "elasticsearch" {
         {
           #{"name": "DISCOVERY_TYPE", "value": "single-node", "name": "ELASTIC_PASSWORD":, "value": "SGTelk123!", "name": "ELASTICSEARCH_SKIP_TRANSPORT_TLS", "value": "true", "name": "ES_JAVA_OPTS",	"value": "-Xms512m "\"-Xmx512m"}
           {
-            "DISCOVERY_TYPE": "single-node",
-            "ELASTIC_PASSWORD": "SGTelk123!",
-            "ELASTICSEARCH_SKIP_TRANSPORT_TLS": "true",
-            "ES_JAVA_OPTS": "-Xms512m\"-Xmx512m"
+	"DISCOVERY_TYPE": "single-node",
+	"ELASTIC_PASSWORD": "SGTelk123!",
+	"ELASTICSEARCH_SKIP_TRANSPORT_TLS": "true",
+	"ES_JAVA_OPTS": "-Xms512m -Xmx512m"
+
           }
         }
       ]
