@@ -81,13 +81,14 @@ resource "aws_ecs_task_definition" "elasticsearch" {
           hostPort      = 9200
         }
       ]
-    },
+    
     {
     environment = [
         {
           {"name": "DISCOVERY_TYPE", "value": "single-node", "name": "ELASTIC_PASSWORD":, "value": "SGTelk123!", "name": "ELASTICSEARCH_SKIP_TRANSPORT_TLS", "value": "true", "name": "ES_JAVA_OPTS",	"value": "-Xms512m -Xmx512m"}
         }
       ]
+    }
     }
   ]) 
   volume {
