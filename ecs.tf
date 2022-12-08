@@ -58,7 +58,38 @@ resource "aws_ecs_task_definition" "elasticsearch" {
   requires_compatibilities = ["FARGATE"]
   cpu                      = var.fargate_cpu
   memory                   = var.fargate_memory
-  container_definitions    = data.template_file.elasticsearch.rendered
+  #container_definitions    = data.template_file.elasticsearch.rendered
+  container_definitions    = jsonencode([
+    {
+      name      = "elasticsearch"
+      image     = ${app_image_elasticsearch}
+      cpu       = ${fargate_cpu}
+      memory    = ${fargate_memory}
+      network_mode = "awsvpc"
+      essential = true
+      logConfiguration = {
+      logDriver = "awslogs"
+      options = {
+        awslogs-group         = "/ecs/Dev-CDI-ELK-task"
+        awslogs-stream-prefix = "ecs"
+        awslogs-region        = var.aws_region
+      }
+    }
+      portMappings = [
+        {
+          containerPort = 9200
+          hostPort      = 9200
+        }
+      ]
+    },
+    {
+    environment = [
+        {
+          {"name": "DISCOVERY_TYPE", "value": "single-node", "name": "ELASTIC_PASSWORD":, "value": "SGTelk123!", "name": "ELASTICSEARCH_SKIP_TRANSPORT_TLS", "value": "true", "name": "ES_JAVA_OPTS",	"value": "-Xms512m -Xmx512m"}
+        }
+      ]
+    }
+  ]) 
   volume {
     name = "ELK-efs"
 
